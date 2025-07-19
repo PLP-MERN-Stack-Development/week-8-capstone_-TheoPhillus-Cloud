@@ -1,5 +1,3 @@
-Absolutely, Theophillus! Based on your GitHub repository week-8-capstone_-TheoPhillus-Cloud and the assignment overview, here’s a polished and professional README.md tailored to your MERN stack capstone project:
-
 # 🌐 MERN Stack Capstone Project – TheoPhillus Cloud
 
 This repository contains the final capstone project for the PLP MERN Stack Development course. It showcases a full-stack web application built using MongoDB, Express.js, React.js, and Node.js. The project demonstrates proficiency in backend development, frontend design, deployment, and testing.
