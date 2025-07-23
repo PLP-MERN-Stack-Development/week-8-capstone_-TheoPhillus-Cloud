@@ -7,7 +7,7 @@ export default function Footer() {
         <p>&copy; {new Date().getFullYear()} Theophillus Motsoane. All rights reserved.</p>
         <div className="flex gap-4 mt-2 sm:mt-0">
           <a
-            href="https://github.com/Theophillus"
+            href="https://github.com/TheoPhillus-Cloud"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-brand-500 transition"
@@ -15,7 +15,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/theophillus"
+            href="www.linkedin.com/in/theophillus-motsoane-624762116"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-brand-500 transition"
