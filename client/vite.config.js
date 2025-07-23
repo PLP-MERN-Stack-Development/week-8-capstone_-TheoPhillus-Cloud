@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
   css: {
     postcss: './postcss.config.js',
@@ -15,4 +15,13 @@ export default defineConfig({
       '@tailwindcss/forms',
     ],
   },
-})
+  ...(command === 'serve' && {
+    server: {
+    proxy: {
+      '/api': 'http://localhost:5000'
+    }
+  }
+
+
+  }),
+}))

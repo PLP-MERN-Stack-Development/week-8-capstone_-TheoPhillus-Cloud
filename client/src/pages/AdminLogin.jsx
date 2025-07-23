@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import useAuth from '../context/useAuth'
 
 export default function AdminLogin() {
-  const [email, setEmail] = useState('theo.motsoane@gmail.com')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const { login } = useAuth()
