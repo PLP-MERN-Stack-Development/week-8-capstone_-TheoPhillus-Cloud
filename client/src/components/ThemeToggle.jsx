@@ -1,14 +1,22 @@
+// components/ThemeToggle.jsx
 import React, { useContext } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 
 export default function ThemeToggle() {
-  const { theme, toggle } = useContext(ThemeContext)
+  const { theme, toggleTheme } = useContext(ThemeContext)
+
   return (
     <button
-      onClick={toggle}
-      className="p-2 rounded focus:outline-none focus:ring bg-gray-200 dark:bg-gray-700"
+      onClick={toggleTheme}
+      className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-500"
+      aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {theme === 'light' ? '🌙' : '☀️'}
+      {theme === 'dark' ? (
+        <SunIcon className="w-6 h-6 text-yellow-300" />
+      ) : (
+        <MoonIcon className="w-6 h-6 text-gray-700" />
+      )}
     </button>
   )
 }

@@ -1,4 +1,7 @@
+// Home.jsx
 import React from 'react'
+import ThemeProvider from '../context/ThemeProvider'
+import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import AboutCard from '../components/AboutCard'
 import Skills from '../components/Skills'
@@ -8,28 +11,33 @@ import Footer from '../components/Footer'
 
 export default function Home() {
   return (
-    <main className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-      <div className="max-w-6xl mx-auto px-4">
-        <Hero />
+    <ThemeProvider>
+      <main className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
+        <Navbar />
+        <div className="max-w-6xl mx-auto px-4">
+          <section id="home">
+            <Hero />
+          </section>
 
-        <section className="py-12 px-4 bg-brand-50 dark:bg-brand-900">
-          <AboutCard />
-        </section>
+          <section id="about" className="py-12 px-4 bg-brand-50 dark:bg-gray-800">
+            <AboutCard />
+          </section>
 
-        <section className="py-12 px-4 bg-white dark:bg-gray-800">
-          <Skills />
-        </section>
+          <section id="skills" className="py-12 px-4 bg-white dark:bg-gray-800">
+            <Skills />
+          </section>
 
-        <section className="py-12 px-4 bg-brand-100 dark:bg-gray-900">
-          <Projects />
-        </section>
+          <section id="projects" className="py-12 px-4 bg-gray-50 dark:bg-gray-900">
+            <Projects />
+          </section>
 
-        <section className="py-12 px-4 bg-accent-500 dark:bg-accent-700 text-white">
-          <Contact />
-        </section>
-      </div>
+          <section id="contact" className="py-12 px-4 bg-brand-500 dark:bg-brand-700 text-white">
+            <Contact />
+          </section>
+        </div>
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </ThemeProvider>
   )
 }
