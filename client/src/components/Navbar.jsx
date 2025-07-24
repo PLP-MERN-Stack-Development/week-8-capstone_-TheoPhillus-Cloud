@@ -1,4 +1,4 @@
-// components/Navbar.jsx
+// src/components/Navbar.jsx
 import React from 'react'
 import { Link } from 'react-scroll'
 import ThemeToggle from './ThemeToggle'
@@ -18,41 +18,19 @@ export default function Navbar() {
               Theophillus
             </Link>
           </div>
-          
           <div className="flex items-center space-x-6">
             <div className="hidden md:flex space-x-6">
-              <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer"
-              >
-                About
-              </Link>
-              <Link
-                to="skills"
-                smooth={true}
-                duration={500}
-                className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer"
-              >
-                Skills
-              </Link>
-              <Link
-                to="projects"
-                smooth={true}
-                duration={500}
-                className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer"
-              >
-                Projects
-              </Link>
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer"
-              >
-                Contact
-              </Link>
+              {['about', 'skills', 'projects', 'contact'].map((section) => (
+                <Link
+                  key={section}
+                  to={section}
+                  smooth={true}
+                  duration={500}
+                  className="text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </Link>
+              ))}
             </div>
             <ThemeToggle />
           </div>
